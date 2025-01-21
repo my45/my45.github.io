@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人主页</title>
+    <style>
+        /* 页面基本样式 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        .contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 头部 -->
+    <header>
+        <h1>个人主页</h1>
+        <p>欢迎来到我的个人网站！</p>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#about">关于我</a>
+        <a href="#projects">我的项目</a>
+        <a href="#contact">联系方式</a>
+    </nav>
+
+    <!-- 关于我部分 -->
+    <section id="about">
+        <h2>关于我</h2>
+        <p>你好！我叫张三，是一名热爱编程和设计的学生/职员。我对技术充满兴趣，尤其在 Web 开发和前端设计方面。</p>
+        <p>目前，我正在学习 HTML、CSS、JavaScript 等技术，并且通过一些个人项目来提升自己的技能。</p>
+    </section>
+
+    <!-- 我的项目部分 -->
+    <section id="projects">
+        <h2>我的项目</h2>
+        <ul>
+            <li><strong>个人博客网站：</strong>一个简单的博客平台，用于记录我的技术学习和生活点滴。</li>
+            <li><strong>在线简历：</strong>我制作了一个动态展示个人信息的简历网站。</li>
+            <li><strong>Todo List 应用：</strong>一个基于 JavaScript 的任务管理应用，帮助我记录日常待办事项。</li>
+        </ul>
+    </section>
+
+    <!-- 联系方式部分 -->
+    <section id="contact" class="contact">
+        <h2>联系方式</h2>
+        <ul>
+            <li><strong>电子邮件：</strong>example@example.com</li>
+            <li><strong>GitHub：</strong><a href="https://github.com/yourusername" target="_blank">https://github.com/yourusername</a></li>
+            <li><strong>LinkedIn：</strong><a href="https://www.linkedin.com/in/yourusername" target="_blank">https://www.linkedin.com/in/yourusername</a></li>
+        </ul>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025 张三 | 个人主页</p>
+    </footer>
+
+</body>
+</html>
