@@ -1,157 +1,186 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>简洁现代网站</title>
+    <title>主页</title>
     <style>
-        /* 通用重置样式 */
-        * {
+        /* 通用重置，去除默认边距 */
+        body,
+        html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
+            background: url(https://bing.img.run/rand_uhd.php);
+            height: 100%;
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* 页头样式 */
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
-        /* 导航栏样式 */
-        nav {
-            background-color: #333;
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            color: #4CAF50;
-        }
-
-        /* 主体内容样式 */
-        .content {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .content h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .content p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        /* 按钮区域样式 */
-        .buttons {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            align-items: center;
+            background-color: #000000;
         }
 
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            font-size: 1rem;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #45a049;
-        }
-
-        /* 底部样式 */
-        footer {
-            background-color: #333;
-            color: white;
+        .text-under {
+            grid-column: span 8;
             text-align: center;
+            font-size: 15px;
+            color: #FFFFFF;
+            margin-top: -10px;
+            transition: all 0.3s ease;
+        }
+
+        /* 顶部时间区域 */
+        .time-display {
+            grid-column: span 8;
+            /* 占满整行 */
+            text-align: center;
+            font-size: 50px;
+            /* 放大时间文字 */
+            font-weight: bold;
+            color: #FFFFFF;
+            /* 时间文字颜色，改为白色 */
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .time-display:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 容器 */
+        .container {
+            background: url(https://bing.img.run/rand_uhd.php);
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: auto repeat(4, 1fr);
+            width: 100vw;
+            height: 100vh;
+            gap: 15px;
             padding: 20px;
-            font-size: 0.9rem;
-            margin-top: 60px;
+            box-sizing: border-box;
+            margin-bottom: 50px;
         }
 
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
+        /* 按钮样式 */
+        .button {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            /* 按钮背景色 */
+            color: #000000;
+            /* 按钮文字颜色 */
+            border: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            width: 11vw;
+            height: 20vh;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        /* 按钮悬停效果 */
+        .button:hover {
+            background: #e9e9e960;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
+
 <body>
-
-    <!-- 页头 -->
-    <header>
-        <h1>欢迎来到简洁网站6</h1>
-        <p>简洁、直观、快速体验</p>
-    </header>
-
-    <!-- 导航栏 -->
-    <nav>
-        <a href="#">首页</a>
-        <a href="#">产品</a>
-        <a href="#">功能</a>
-        <a href="#">联系我们</a>
-    </nav>
-
-    <!-- 主体内容 -->
-    <div class="content">
-        <h2>探索我们的功能</h2>
-        <p>简洁的界面，让你轻松找到所需的功能。</p>
+    <div class="container">
+        <!-- 当前日期和时间显示 -->
+        <div id="time" class="time-display"></div>
 
         <!-- 按钮区域 -->
-        <div class="buttons">
-            <button class="button">功能一</button>
-            <button class="button">功能二</button>
-            <button class="button">功能三</button>
-            <button class="button">功能四</button>
-        </div>
+        <button class="button" onclick="window.location.href='./minecraft.html'"><b>JESR服务器官网</b></button>
+        <button class="button" onclick="window.location.href='https://example2.com'">按钮2</button>
+        <button class="button" onclick="window.location.href='https://example3.com'">按钮3</button>
+        <button class="button" onclick="window.location.href='https://example4.com'">按钮4</button>
+        <button class="button" onclick="window.location.href='https://example5.com'">按钮5</button>
+        <button class="button" onclick="window.location.href='https://example6.com'">按钮6</button>
+        <button class="button" onclick="window.location.href='https://example7.com'">按钮7</button>
+        <button class="button" onclick="window.location.href='https://example8.com'">按钮8</button>
+        <button class="button" onclick="window.location.href='https://example12.com'">按钮9</button>
+        <button class="button" onclick="window.location.href='https://example13.com'">按钮10</button>
+        <button class="button" onclick="window.location.href='https://example14.com'">按钮11</button>
+        <button class="button" onclick="window.location.href='https://example12.com'">按钮12</button>
+        <button class="button" onclick="window.location.href='https://example13.com'">按钮13</button>
+        <button class="button" onclick="window.location.href='https://example14.com'">按钮14</button>
+        <button class="button" onclick="window.location.href='https://example15.com'">按钮15</button>
+        <button class="button" onclick="window.location.href='https://example16.com'">按钮16</button>
+        <button class="button" onclick="window.location.href='https://example17.com'">按钮17</button>
+        <button class="button" onclick="window.location.href='https://example18.com'">按钮18</button>
+        <button class="button" onclick="window.location.href='https://example19.com'">按钮19</button>
+        <button class="button" onclick="window.location.href='https://example20.com'">按钮20</button>
+        <button class="button" onclick="window.location.href='https://example21.com'">按钮21</button>
+        <button class="button" onclick="window.location.href='https://example22.com'">按钮22</button>
+        <button class="button" onclick="window.location.href='https://example23.com'">按钮23</button>
+        <button class="button" onclick="window.location.href='https://example24.com'">按钮24</button>
+        <button class="button" onclick="window.location.href='https://example25.com'">按钮25</button>
+        <button class="button" onclick="window.location.href='https://example26.com'">按钮26</button>
+        <button class="button" onclick="window.location.href='https://example27.com'">按钮27</button>
+        <button class="button" onclick="window.location.href='./photo.html'"><b>新纪录</b></button>
+        <button class="button" onclick="window.location.href='./ogame.html'"><b>在线游戏</b></button>
+        <button class="button" onclick="window.location.href='./download.html'"><b>下载页面</b></button>
+        <button class="button" onclick="window.location.href='./zanzhu.html'"><b>赞助</b></button>
+        <button class="button" onclick="checkPassword()"><b>神奇代码</b></button>
+        <a class="text-under">© 2024 袁铭泽的网站. 版权所有.</a>
+        <a class="text-under">联系邮箱: ymingze1003@163.com</a>
+        <a class="text-under">Powered by 袁铭泽.</a>
+        <a class="text-under">由bing api提供背景图片.</a>
     </div>
+    <script>
+        function checkPassword() {
+            while (true) {
+                // 获取用户输入的密码
+                var password = prompt("请输入神奇代码（赞助后可获得）");
+                if (password == null) {
+                    break;
+                }
+                // 密码正确时跳转到html
+                else if (password === "#game") {
+                    window.location.href = "game.html";
+                    break;
+                }
+                else if (password === "#") {
+                    window.location.href = "lo.html";
+                    break;
+                }
+                else {
+                    alert("密码错误，请再试一次！");
+                }
+            }
+        }
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const date = now.toLocaleDateString('zh-CN'); // 中文日期格式
+            const time = `${hours}:${minutes}:${seconds} ${date}`;
 
-    <!-- 底部 -->
-    <footer>
-        <p>© 2025 简洁网站 | <a href="#">隐私政策</a> | <a href="#">使用条款</a></p>
-    </footer>
+            document.getElementById('time').textContent = time;
+        }
 
+        // 每秒更新一次当前时间
+        setInterval(updateTime, 1000);
+        updateTime();  // 初始调用一次显示时间
+    </script>
 </body>
+
 </html>
