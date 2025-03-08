@@ -37,6 +37,20 @@
             /* 设置固定的宽度为原始的宽度 */
         }
 
+        .container1 {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-left: 20px;
+            /* 添加右侧Margin实现间隙 */
+            margin-bottom: 20px;
+            /* 添加底部Margin以防止最后一行的间隙 */
+            width: 300px;
+            /* 设置固定的宽度为原始的宽度 */
+        }
+
         .container:last-child {
             margin-right: 0;
             /* 最后一个container在每一行不需要右侧Margin */
@@ -68,7 +82,11 @@
             font-size: 24px;
             color: #007acc;
         }
-
+        .boxOfficeValuex {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #007acc;
+        }
         .loading,
         .error {
             color: #ff6347;
@@ -88,6 +106,10 @@
     <div class="container">
         <h1>随机运势</h1>
         <p id="boxOfficeValue2" class="loading">正在加载数据...</p>
+    </div>
+    <div class="container1">
+        <h1>联系方式</h1>
+        <p class="boxOfficeValuex">wx:wxyuanmingze<br>qq:2872420949</p>
     </div>
     <script>
         // API 地址
