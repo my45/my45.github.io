@@ -1,185 +1,181 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>主页</title>
+    <title>YMZ - 工具</title>
     <style>
-        /* 通用重置，去除默认边距 */
-        body,
-        html {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             margin: 0;
-            padding: 0;
-            background: url(https://bing.img.run/rand_uhd.php);
-            height: 100%;
-            font-family: 'Arial', sans-serif;
+            padding: 10px;
+            /* 给body添加一些内边距 */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000000;
-        }
-
-        .text-under {
-            grid-column: span 8;
-            text-align: center;
-            font-size: 15px;
-            color: #FFFFFF;
-            margin-top: -10px;
-            transition: all 0.3s ease;
-        }
-
-        /* 顶部时间区域 */
-        .time-display {
-            grid-column: span 8;
-            /* 占满整行 */
-            text-align: center;
-            font-size: 50px;
-            /* 放大时间文字 */
-            font-weight: bold;
-            color: #FFFFFF;
-            /* 时间文字颜色，改为白色 */
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            padding-top: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .time-display:hover {
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        /* 容器 */
-        .container {
-            background: url(https://bing.img.run/rand_uhd.php);
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: auto repeat(4, 1fr);
-            width: 100vw;
+            /* 使用flex布局 */
+            justify-content: flex-start;
+            /* 从左至右排列 */
+            align-items: flex-start;
+            /* 从上至下排列 */
             height: 100vh;
-            gap: 15px;
+            flex-wrap: wrap;
+            /* 允许换行 */
+        }
+
+        .container {
+            background-color: #fff;
             padding: 20px;
-            box-sizing: border-box;
-            margin-bottom: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-right: 20px;
+            /* 添加右侧Margin实现间隙 */
+            margin-bottom: 20px;
+            /* 添加底部Margin以防止最后一行的间隙 */
+            width: 300px;
+            /* 设置固定的宽度为原始的宽度 */
         }
 
-        /* 按钮样式 */
-        .button {
-            background-color: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            /* 按钮背景色 */
-            color: #000000;
-            /* 按钮文字颜色 */
-            border: none;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border-radius: 12px;
-            padding: 20px;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-transform: uppercase;
-            width: 11vw;
-            height: 20vh;
+        .container:last-child {
+            margin-right: 0;
+            /* 最后一个container在每一行不需要右侧Margin */
         }
 
-        /* 按钮悬停效果 */
-        .button:hover {
-            background: #e9e9e960;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        .container:nth-child(3n) {
+            margin-right: 0;
+            /* 每三个container的最后一个不需要右侧Margin */
         }
 
-        img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+        h1 {
+            color: #333;
+        }
+
+        #boxOfficeValue {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #007acc;
+        }
+
+        #boxOfficeValue1 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #007acc;
+        }
+
+        #boxOfficeValue2 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #007acc;
+        }
+
+        .loading,
+        .error {
+            color: #ff6347;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <!-- 当前日期和时间显示 -->
-        <div id="time" class="time-display"></div>
-
-        <!-- 按钮区域 -->
-        <button class="button" onclick="window.location.href='./minecraft.html'"><b>JESR服务器官网</b></button>
-        <button class="button" onclick="window.location.href='https://example2.com'">按钮2</button>
-        <button class="button" onclick="window.location.href='https://example3.com'">按钮3</button>
-        <button class="button" onclick="window.location.href='https://example4.com'">按钮4</button>
-        <button class="button" onclick="window.location.href='https://example5.com'">按钮5</button>
-        <button class="button" onclick="window.location.href='https://example6.com'">按钮6</button>
-        <button class="button" onclick="window.location.href='https://example7.com'">按钮7</button>
-        <button class="button" onclick="window.location.href='https://example8.com'">按钮8</button>
-        <button class="button" onclick="window.location.href='https://example12.com'">按钮9</button>
-        <button class="button" onclick="window.location.href='https://example13.com'">按钮10</button>
-        <button class="button" onclick="window.location.href='https://example14.com'">按钮11</button>
-        <button class="button" onclick="window.location.href='https://example12.com'">按钮12</button>
-        <button class="button" onclick="window.location.href='https://example13.com'">按钮13</button>
-        <button class="button" onclick="window.location.href='https://example14.com'">按钮14</button>
-        <button class="button" onclick="window.location.href='https://example15.com'">按钮15</button>
-        <button class="button" onclick="window.location.href='https://example16.com'">按钮16</button>
-        <button class="button" onclick="window.location.href='https://example17.com'">按钮17</button>
-        <button class="button" onclick="window.location.href='https://example18.com'">按钮18</button>
-        <button class="button" onclick="window.location.href='https://example19.com'">按钮19</button>
-        <button class="button" onclick="window.location.href='https://example20.com'">按钮20</button>
-        <button class="button" onclick="window.location.href='https://example21.com'">按钮21</button>
-        <button class="button" onclick="window.location.href='https://example22.com'">按钮22</button>
-        <button class="button" onclick="window.location.href='https://example23.com'">按钮23</button>
-        <button class="button" onclick="window.location.href='https://example24.com'">按钮24</button>
-        <button class="button" onclick="window.location.href='https://example25.com'">按钮25</button>
-        <button class="button" onclick="window.location.href='https://example26.com'">按钮26</button>
-        <button class="button" onclick="window.location.href='https://example27.com'">按钮27</button>
-        <button class="button" onclick="window.location.href='./photo.html'"><b>新纪录</b></button>
-        <button class="button" onclick="window.location.href='./ogame.html'"><b>在线游戏</b></button>
-        <button class="button" onclick="window.location.href='./download.html'"><b>下载页面</b></button>
-        <button class="button" onclick="window.location.href='./zanzhu.html'"><b>赞助</b></button>
-        <button class="button" onclick="checkPassword()"><b>神奇代码</b></button>
-        <a class="text-under">© 2024 袁铭泽的网站. 版权所有.</a>
-        <a class="text-under">联系邮箱: ymingze1003@163.com</a>
-        <a class="text-under">Powered by 袁铭泽.</a>
-        <a class="text-under">由bing api提供背景图片.</a>
+        <h1>《哪吒2》票房数据</h1>
+        <p id="boxOfficeValue" class="loading">正在加载数据...</p>
+    </div>
+    <div class="container">
+        <h1>每日一言</h1>
+        <p id="boxOfficeValue1" class="loading">正在加载数据...</p>
+    </div>
+    <div class="container">
+        <h1>随机运势</h1>
+        <p id="boxOfficeValue2" class="loading">正在加载数据...</p>
     </div>
     <script>
-        function checkPassword() {
-            while (true) {
-                // 获取用户输入的密码
-                var password = prompt("请输入神奇代码（赞助后可获得）");
-                if (password == null) {
-                    break;
-                }
-                // 密码正确时跳转到html
-                else if (password === "#game") {
-                    window.location.href = "game.html";
-                    break;
-                }
-                else if (password === "#") {
-                    window.location.href = "lo.html";
-                    break;
-                }
-                else {
-                    alert("密码错误，请再试一次！");
-                }
-            }
-        }
-        function updateTime() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const date = now.toLocaleDateString('zh-CN'); // 中文日期格式
-            const time = `${hours}:${minutes}:${seconds} ${date}`;
+        // API 地址
+        const apiUrl = 'https://60s-api.viki.moe/v2/maoyan';
+        const apiUrl1 = 'https://60s-api.viki.moe/v2/hitokoto';
+        const apiUrl2 = 'https://60s-api.viki.moe/v2/luck';
+        // 使用 fetch 获取 API 数据
+        fetch(apiUrl)
+            .then(response => response.json()) // 将响应解析为 JSON
+            .then(data => {
+                console.log(data); // 打印 API 返回的数据
 
-            document.getElementById('time').textContent = time;
-        }
+                // 提取 data.list 数组
+                const movieList = data.data.list;
 
-        // 每秒更新一次当前时间
-        setInterval(updateTime, 1000);
-        updateTime();  // 初始调用一次显示时间
+                // 查找《哪吒之魔童闹海》的票房数据
+                const nezha2Data = movieList.find(movie => movie.movie_name === "哪吒之魔童闹海");
+
+                const boxOfficeValue = document.getElementById('boxOfficeValue');
+                if (nezha2Data) {
+                    // 如果找到，显示票房数据
+                    boxOfficeValue.textContent = `${nezha2Data.box_office_desc}`;
+                    boxOfficeValue.classList.remove('loading');
+                } else {
+                    // 如果未找到，显示提示
+                    boxOfficeValue.textContent = "未找到《哪吒之魔童闹海》的票房数据";
+                    boxOfficeValue.classList.remove('loading');
+                    boxOfficeValue.classList.add('error');
+                }
+            })
+            .catch(error => {
+                console.error('获取数据时出错:', error);
+                const boxOfficeValue = document.getElementById('boxOfficeValue');
+                boxOfficeValue.textContent = '加载数据失败';
+                boxOfficeValue.classList.remove('loading');
+                boxOfficeValue.classList.add('error');
+            });
+        fetch(apiUrl1)
+            .then(response => response.json()) // 将响应解析为 JSON
+            .then(data => {
+                console.log(data); // 打印 API 返回的数据
+
+                // 提取 data.hitokoto 数组
+                const nezha2Data1 = data.data.hitokoto;
+                const boxOfficeValue1 = document.getElementById('boxOfficeValue1');
+                if (nezha2Data1) {
+                    // 如果找到，显示票房数据
+                    boxOfficeValue1.textContent = `${nezha2Data1}`;
+                    boxOfficeValue1.classList.remove('loading');
+                } else {
+                    // 如果未找到，显示提示
+                    boxOfficeValue1.textContent = "未找到随机一言的数据";
+                    boxOfficeValue1.classList.remove('loading');
+                    boxOfficeValue1.classList.add('error');
+                }
+            })
+            .catch(error => {
+                console.error('获取数据时出错:', error);
+                const boxOfficeValue1 = document.getElementById('boxOfficeValue1');
+                boxOfficeValue1.textContent = '加载数据失败';
+                boxOfficeValue1.classList.remove('loading');
+                boxOfficeValue1.classList.add('error');
+            });
+        fetch(apiUrl2)
+            .then(response => response.json()) // 将响应解析为 JSON
+            .then(data => {
+                console.log(data); // 打印 API 返回的数据
+
+                // 提取 data.list 数组
+                const nezha2Data2 = data.data.luck_desc;
+                const boxOfficeValue2 = document.getElementById('boxOfficeValue2');
+                if (nezha2Data2) {
+                    boxOfficeValue2.textContent = `${nezha2Data2}`;
+                    boxOfficeValue2.classList.remove('loading');
+                } else {
+                    // 如果未找到，显示提示
+                    boxOfficeValue2.textContent = "未找到随机运势的数据";
+                    boxOfficeValue2.classList.remove('loading');
+                    boxOfficeValue2.classList.add('error');
+                }
+            })
+            .catch(error => {
+                console.error('获取数据时出错:', error);
+                const boxOfficeValue2 = document.getElementById('boxOfficeValue2');
+                boxOfficeValue2.textContent = '加载数据失败';
+                boxOfficeValue2.classList.remove('loading');
+                boxOfficeValue2.classList.add('error');
+            });
     </script>
 </body>
 
